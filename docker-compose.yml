@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: facilityflow-postgres
+    environment:
+      POSTGRES_DB: facilityflow
+      POSTGRES_USER: facilityflow
+      POSTGRES_PASSWORD: REDACTED
+    ports:
+      - "5432:5432"
+    volumes:
+      - facilityflow_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  facilityflow_postgres_data:
