@@ -1,0 +1,10 @@
+CREATE TABLE work_orders (
+    id BIGSERIAL PRIMARY KEY,
+    title VARCHAR(150) NOT NULL,
+    description TEXT,
+    status VARCHAR(30) NOT NULL,
+    priority VARCHAR(30) NOT NULL,
+    location VARCHAR(150),
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
