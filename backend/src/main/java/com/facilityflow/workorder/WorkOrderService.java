@@ -29,4 +29,35 @@ public class WorkOrderService {
         return workOrderRepository.save(workOrder);
     }
 
+    public WorkOrder getWorkOrderById(Long id) {
+        return workOrderRepository.findById(id).orElseThrow(() -> new WorkOrderNotFoundException(id));
+    }
+
+    public WorkOrder updateWorkOrder(Long id, UpdateWorkOrderRequest request) {
+        WorkOrder workOrder = getWorkOrderById(id);
+
+        if (request.getTitle() != null) {
+            workOrder.setTitle(request.getTitle());
+        }
+
+        if (request.getDescription() != null) {
+            workOrder.setDescription(request.getDescription());
+        }
+
+        if (request.getStatus() != null) {
+            workOrder.setStatus(request.getStatus());
+        }
+
+        if (request.getPriority() != null) {
+            workOrder.setPriority(request.getPriority());
+        }
+        if (request.getLocation() != null) {
+            workOrder.setLocation(request.getLocation());
+        }
+
+        // Return entity with updated values and save persistence
+        return workOrderRepository.save(workOrder);
+
+    }
+
 }
