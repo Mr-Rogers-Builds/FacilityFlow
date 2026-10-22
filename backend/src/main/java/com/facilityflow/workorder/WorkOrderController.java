@@ -41,6 +41,11 @@ public class WorkOrderController {
         return workOrderService.getWorkOrderById(id);
     }
 
+    @GetMapping("/{id}/events")
+    public List<WorkOrderEventResponse> getWorkOrderEvents(@PathVariable Long id) {
+        return workOrderService.getWorkOrderEvents(id);
+    }
+
     @PatchMapping("/{id}")
     public WorkOrder updateWorkOrder(
             @PathVariable Long id,

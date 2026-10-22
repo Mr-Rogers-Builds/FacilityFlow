@@ -1,0 +1,17 @@
+package com.facilityflow.workorder;
+
+public enum WorkOrderEventType {
+    CREATED,
+    STATUS_CHANGED,
+    TITLE_CHANGED,
+    PRIORITY_CHANGED,
+    ASSIGNMENT_CHANGED,
+    LOCATION_CHANGED,
+    DUE_DATE_CHANGED,
+    DESCRIPTION_CHANGED,
+    NOTE_ADDED,
+    NOTE_REMOVED,
+    ATTACHMENT_ADDED,
+    ATTACHMENT_REMOVED,
+
+}
