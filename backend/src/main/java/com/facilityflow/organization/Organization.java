@@ -43,10 +43,10 @@ public class Organization {
     @Column(name = "website", length = 200)
     private String website;
 
-    @Column(name = "phone_number", length = 20)
+    @Column(name = "phone_number", nullable = false, length = 20)
     private String phoneNumber;
 
-    @Column(name = "email", length = 100)
+    @Column(name = "email", nullable = false, length = 100)
     private String email;
 
     @Column(name = "fax_number", length = 20)

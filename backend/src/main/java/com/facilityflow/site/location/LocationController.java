@@ -22,28 +22,28 @@ public class LocationController {
     }
 
     @GetMapping("/nodes")
-    public List<LocationNode> getAllLocationNodesBySite(@PathVariable Long siteId) {
+    public List<LocationNodeResponse> getAllLocationNodesBySite(@PathVariable Long siteId) {
         return locationService.getLocationNodesBySite(siteId);
     }
 
     @GetMapping("/types")
-    public List<LocationType> getAllLocationTypesBySite(@PathVariable Long siteId) {
+    public List<LocationTypeResponse> getAllLocationTypesBySite(@PathVariable Long siteId) {
         return locationService.getLocationTypesBySite(siteId);
     }
 
     @GetMapping("/nodes/roots")
-    public List<LocationNode> getRootLocationNodesBySite(@PathVariable Long siteId) {
+    public List<LocationNodeResponse> getRootLocationNodesBySite(@PathVariable Long siteId) {
         return locationService.getRootLocationNodesBySite(siteId);
     }
 
     @GetMapping("/nodes/{parentId}/children")
-    public List<LocationNode> getLocationNodesByParent(@PathVariable Long siteId, @PathVariable Long parentId) {
+    public List<LocationNodeResponse> getLocationNodesByParent(@PathVariable Long siteId, @PathVariable Long parentId) {
         return locationService.getLocationNodesBySiteAndParent(siteId, parentId);
     }
 
     @PostMapping("/nodes")
     @ResponseStatus(HttpStatus.CREATED)
-    public LocationNode createLocationNode(@PathVariable Long siteId,
+    public LocationNodeResponse createLocationNode(@PathVariable Long siteId,
             @Valid @RequestBody CreateLocationNodeRequest request) {
         return locationService.createLocationNode(siteId, request.getLocationTypeId(), request.getLocationNodeName(),
                 request.getParentId());
@@ -51,7 +51,7 @@ public class LocationController {
 
     @PostMapping("/types")
     @ResponseStatus(HttpStatus.CREATED)
-    public LocationType createLocationType(@PathVariable Long siteId,
+    public LocationTypeResponse createLocationType(@PathVariable Long siteId,
             @Valid @RequestBody CreateLocationTypeRequest request) {
         return locationService.createLocationType(siteId, request.getLocationTypeName());
     }

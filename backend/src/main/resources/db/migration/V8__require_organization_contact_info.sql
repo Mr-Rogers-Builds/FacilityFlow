@@ -1,0 +1,5 @@
+ALTER TABLE organizations
+ALTER COLUMN phone_number
+SET NOT NULL,
+    ALTER COLUMN email
+SET NOT NULL;
