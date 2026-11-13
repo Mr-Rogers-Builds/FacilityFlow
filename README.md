@@ -161,6 +161,7 @@ FacilityFlow/
 ├── backend/              # Spring Boot application, Maven wrapper, and source code
 ├── docker-compose.yml    # Local PostgreSQL service
 ├── .gitignore
+├── LICENSE
 └── README.md
 ```
 
@@ -189,3 +190,9 @@ FacilityFlow draws on hands-on experience managing maintenance operations, work 
 ## Project maturity
 
 FacilityFlow is an **active learning and portfolio project**, not production-ready software. Functionality, data models, and APIs are subject to change. As the project progresses, this README will be updated to reflect implemented features rather than aspirational ones.
+
+## License
+
+Copyright © 2026 Mr-Rogers-Builds. All rights reserved.
+
+This project is shared for **personal, educational, and portfolio evaluation purposes only**. Commercial use, resale, or integration into commercial products or services is not permitted without prior written permission. See the [LICENSE](./LICENSE) file for full details.
